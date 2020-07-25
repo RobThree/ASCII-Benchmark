@@ -16,7 +16,7 @@ namespace ASCIITest
 
         static void Main(string[] args)
         {
-            var iterations = 1;
+            var iterations = 10;
             var methods = new (string, Action<string>)[] {
                 ("Regex", (s) => IsAscii_Regex(s)),
                 ("Branchy1", (s) => IsAscii_Branchy1(s)),
