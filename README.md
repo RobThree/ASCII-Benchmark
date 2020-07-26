@@ -11,34 +11,34 @@ Test strings in the files `allCountries.txt.gz` and `cities500.txt.gz` are [sour
             Lines           : 7,522,986
             Avg. length     : 14.58
             Max. length     : 151
-            Non-Ascii lines : 23.52 %%
+            Non-Ascii lines : 23.52 %
     Measuring methods... please be patient...
-    Regex           Avg: 1.1114s    Min: 1.0492s    Max: 1.1788s       6,769,036 strings/sec
-    Branchy1        Avg: 0.0522s    Min: 0.0495s    Max: 0.0540s     144,076,856 strings/sec
-    Branchy2        Avg: 0.0577s    Min: 0.0504s    Max: 0.0623s     130,480,608 strings/sec
-    Branchless      Avg: 0.0573s    Min: 0.0528s    Max: 0.0616s     131,280,711 strings/sec
-    Hybrid          Avg: 0.0594s    Min: 0.0504s    Max: 0.0903s     126,719,761 strings/sec
+    Regex           Avg: 1.1677s    Min: 1.1001s    Max: 1.2178s       6,442,421 strings/sec
+    Branchy1        Avg: 0.0552s    Min: 0.0497s    Max: 0.0581s     136,181,375 strings/sec
+    Branchy2        Avg: 0.0533s    Min: 0.0481s    Max: 0.0615s     141,014,802 strings/sec
+    Branchless      Avg: 0.0561s    Min: 0.0519s    Max: 0.0584s     134,095,915 strings/sec
+    Hybrid          Avg: 0.0518s    Min: 0.0483s    Max: 0.0553s     145,139,683 strings/sec
 
     Benching cities500.txt.gz
             Lines           : 165,957
             Avg. length     : 10.14
             Max. length     : 65
-            Non-Ascii lines : 20.12 %%
+            Non-Ascii lines : 20.12 %
     Measuring methods... please be patient...
-    Regex           Avg: 0.0196s    Min: 0.0192s    Max: 0.0201s       8,453,229 strings/sec
-    Branchy1        Avg: 0.0012s    Min: 0.0009s    Max: 0.0015s     143,309,759 strings/sec
-    Branchy2        Avg: 0.0011s    Min: 0.0009s    Max: 0.0013s     146,109,487 strings/sec
-    Branchless      Avg: 0.0012s    Min: 0.0009s    Max: 0.0014s     141,202,747 strings/sec
-    Hybrid          Avg: 0.0011s    Min: 0.0009s    Max: 0.0014s     147,760,317 strings/sec
+    Regex           Avg: 0.0224s    Min: 0.0218s    Max: 0.0231s       7,404,511 strings/sec
+    Branchy1        Avg: 0.0011s    Min: 0.0008s    Max: 0.0013s     152,820,546 strings/sec
+    Branchy2        Avg: 0.0011s    Min: 0.0008s    Max: 0.0013s     152,532,605 strings/sec
+    Branchless      Avg: 0.0011s    Min: 0.0009s    Max: 0.0013s     148,741,642 strings/sec
+    Hybrid          Avg: 0.0012s    Min: 0.0008s    Max: 0.0015s     142,158,282 strings/sec
 
     Benching enwik8.gz
             Lines           : 1,128,024
             Avg. length     : 87.32
             Max. length     : 4,173
-            Non-Ascii lines : 6.35 %%
+            Non-Ascii lines : 6.35 %
     Measuring methods... please be patient...
-    Regex           Avg: 0.2519s    Min: 0.2158s    Max: 0.2809s       4,478,492 strings/sec
-    Branchy1        Avg: 0.0157s    Min: 0.0142s    Max: 0.0172s      71,839,465 strings/sec
-    Branchy2        Avg: 0.0151s    Min: 0.0144s    Max: 0.0165s      74,767,351 strings/sec
-    Branchless      Avg: 0.0149s    Min: 0.0141s    Max: 0.0156s      75,526,212 strings/sec
-    Hybrid          Avg: 0.0147s    Min: 0.0143s    Max: 0.0155s      76,516,251 strings/sec
+    Regex           Avg: 0.2885s    Min: 0.2559s    Max: 0.3619s       3,910,404 strings/sec
+    Branchy1        Avg: 0.0163s    Min: 0.0158s    Max: 0.0173s      69,345,382 strings/sec
+    Branchy2        Avg: 0.0150s    Min: 0.0141s    Max: 0.0168s      75,191,574 strings/sec
+    Branchless      Avg: 0.0160s    Min: 0.0156s    Max: 0.0164s      70,479,739 strings/sec
+    Hybrid          Avg: 0.0141s    Min: 0.0134s    Max: 0.0151s      80,107,376 strings/sec

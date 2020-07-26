@@ -70,6 +70,10 @@ namespace ASCIITest
 
         private static List<TimeSpan> Benchmark(string[] strings, Action<string> method, int rounds, int warmupRounds = 3)
         {
+            // Perform garbage collection
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+
             //Warmup
             for (int i = 0; i < warmupRounds; i++)
                 Parallel.For(0, strings.Length, i => method(strings[i]));
