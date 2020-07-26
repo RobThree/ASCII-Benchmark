@@ -72,7 +72,7 @@ namespace ASCIITest
             return results;
         }
 
-        private static readonly Regex nonasciifilter = new Regex("[^\x20-\x7F]", RegexOptions.Compiled);
+        private static readonly Regex nonasciifilter = new Regex("[^\x00-\x7F]", RegexOptions.Compiled);
         private static bool IsAscii_Regex(string value) => !nonasciifilter.IsMatch(value);
 
         private static bool IsAscii_Branchy1(string value)
@@ -96,7 +96,6 @@ namespace ASCIITest
             }
             return true;
         }
-
 
         private static bool IsAscii_BranchLess(string value)
         {
