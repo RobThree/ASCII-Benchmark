@@ -56,7 +56,7 @@ namespace ASCIITest
             Console.WriteLine($"\tLines           : {strings.Length:N0}");
             Console.WriteLine($"\tAvg. length     : {strings.Select(s => s.Length).Average():N2}");
             Console.WriteLine($"\tMax. length     : {strings.Select(s => s.Length).Max():N0}");
-            Console.WriteLine($"\tNon-Ascii lines : {strings.Where(s => !IsAscii_Hybrid(s)).Count() / (double)strings.Length:P2}%");
+            Console.WriteLine($"\tNon-Ascii lines : {strings.Where(s => !IsAscii_Hybrid(s)).Count() / (double)strings.Length:P2}");
         }
 
         private static IEnumerable<string> ReadFile(string file)
