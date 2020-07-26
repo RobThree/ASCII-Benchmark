@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ASCIITest
@@ -16,6 +18,9 @@ namespace ASCIITest
 
         static void Main(string[] args)
         {
+            Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
+
             var iterations = 10;
             var methods = new (string, Action<string>)[] {
                 ("Regex", (s) => IsAscii_Regex(s)),
@@ -32,6 +37,7 @@ namespace ASCIITest
 
                 // Read file into memory
                 var strings = ReadFile(f).ToArray();
+                PrintFileStats(strings);
 
                 // Benchmark
                 Console.WriteLine("Measuring methods... please be patient...");
@@ -39,10 +45,18 @@ namespace ASCIITest
 
                 // Print results
                 Console.WriteLine(string.Join("\r\n", results.Select(
-                    r => $"{r.Name,-15}\tAvg: {TimeSpan.FromMilliseconds(r.Results.Average(r => r.TotalMilliseconds))}\tMin: {r.Results.Min()}\tMax: {r.Results.Max()}")
+                    r => $"{r.Name,-15}\tAvg: {r.Results.Average(r => r.TotalSeconds):N4}s\tMin: {r.Results.Min().TotalSeconds:N4}s\tMax: {r.Results.Max().TotalSeconds:N4}s\t{strings.Length / r.Results.Average(r => r.TotalSeconds),12:N0} strings/sec")
                 ));
                 Console.WriteLine();
             }
+        }
+
+        private static void PrintFileStats(string[] strings)
+        {
+            Console.WriteLine($"\tLines           : {strings.Length:N0}");
+            Console.WriteLine($"\tAvg. length     : {strings.Select(s => s.Length).Average():N2}");
+            Console.WriteLine($"\tMax. length     : {strings.Select(s => s.Length).Max():N0}");
+            Console.WriteLine($"\tNon-Ascii lines : {strings.Where(s => !IsAscii_Hybrid(s)).Count() / (double)strings.Length:P2}%");
         }
 
         private static IEnumerable<string> ReadFile(string file)
