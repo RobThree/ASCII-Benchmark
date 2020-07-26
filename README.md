@@ -3,7 +3,7 @@ Inspired by https://lemire.me/blog/2020/07/21/avoid-character-by-character-proce
 
 Test strings in the files `allCountries.txt.gz` and `cities500.txt.gz` are [sourced from Geonames.org](https://download.geonames.org/export/dump/) where I have extracted the second column (`name`) of the corresponding files. The `enwik8.gz` file is sourced from [The Large Text Compression Benchmark](http://mattmahoney.net/dc/textdata.html). Testfiles have been gzipped in order to save space. These files have a nice mix of ASCII / non-ASCII data.
 
-# Results:
+# Results (Intel Core i9-10900X):
 
     Benching allCountries.txt.gz
             Lines           : 7,522,986
